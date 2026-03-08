@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #f3f6f9;
+    --bg-secondary: #ffffff;
+    --bg-soft: #ecf2f8;
+    --surface-border: #d7e0ea;
+    --text-primary: #152031;
+    --text-muted: #526276;
+    --accent: #1d4ed8;
+    --accent-soft: #dbeafe;
+  }
+
+  .dark {
+    --bg-primary: #0a0f1e;
+    --bg-secondary: #0f172a;
+    --bg-soft: #172136;
+    --surface-border: #253450;
+    --text-primary: #e6edf8;
+    --text-muted: #9db0cc;
+    --accent: #60a5fa;
+    --accent-soft: #1e3a8a;
+  }
+
+  * {
+    @apply border-[color:var(--surface-border)];
+  }
+
+  body {
+    @apply m-0 min-h-screen antialiased;
+    background:
+      radial-gradient(circle at 10% -5%, #bfdbfe 0%, transparent 35%),
+      radial-gradient(circle at 95% 5%, #bbf7d0 0%, transparent 25%),
+      var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+  }
+
+  .dark body {
+    background:
+      radial-gradient(circle at 5% -10%, #1e3a8a 0%, transparent 38%),
+      radial-gradient(circle at 95% 5%, #14532d 0%, transparent 30%),
+      var(--bg-primary);
+  }
+}
+
+@layer components {
+  .surface {
+    @apply rounded-2xl border shadow-sm;
+    background: color-mix(in oklab, var(--bg-secondary) 92%, white 8%);
+  }
+
+  .dark .surface {
+    background: color-mix(in oklab, var(--bg-secondary) 95%, black 5%);
+  }
+
+  .muted-text {
+    color: var(--text-muted);
+  }
+
+  .title-font {
+    font-family: var(--font-display);
+  }
+}
