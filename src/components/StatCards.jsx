@@ -1,37 +1,30 @@
 const stats = [
   {
-    title: "Monthly Revenue",
-    value: "$84.2K",
-    delta: "+12.4%",
-    note: "vs last month",
+    title: "Revenue",
+    value: "$96,420",
+    delta: "+14.2%",
+    note: "month over month",
     gradient: "from-blue-600 via-cyan-500 to-emerald-400",
   },
   {
-    title: "New Customers",
-    value: "1,286",
-    delta: "+8.1%",
-    note: "organic + paid",
+    title: "Users",
+    value: "8,940",
+    delta: "+9.7%",
+    note: "active this month",
     gradient: "from-violet-600 via-fuchsia-500 to-rose-400",
   },
   {
-    title: "Orders Completed",
-    value: "2,944",
-    delta: "+5.7%",
-    note: "delivery success 97%",
+    title: "Orders",
+    value: "3,284",
+    delta: "+6.3%",
+    note: "completed checkout",
     gradient: "from-amber-500 via-orange-500 to-red-500",
-  },
-  {
-    title: "Conversion Rate",
-    value: "6.3%",
-    delta: "+1.2%",
-    note: "checkout funnel",
-    gradient: "from-teal-600 via-emerald-500 to-lime-400",
   },
 ]
 
 export default function StatCards() {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
       {stats.map((item) => (
         <article
           key={item.title}

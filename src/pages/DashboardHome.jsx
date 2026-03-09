@@ -1,6 +1,7 @@
 import StatCards from "../components/StatCards"
 import RevenueChart from "../components/RevenueChart"
 import RecentOrders from "../components/RecentOrders"
+import UserTable from "../components/UserTable"
 
 export default function DashboardHome() {
   return (
@@ -13,17 +14,23 @@ export default function DashboardHome() {
             Executive Summary
           </p>
           <h2 className="title-font mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
-            Sales and engagement are steadily climbing this quarter
+            Key SaaS metrics are improving across every core funnel
           </h2>
           <p className="mt-3 max-w-2xl text-sm muted-text sm:text-base">
-            This dashboard demonstrates a modern admin UI with responsive layout,
-            reusable data widgets, and light/dark theme support suitable for client projects.
+            Track business performance from one place with clear analytics cards,
+            growth chart insights, and user operations controls.
           </p>
         </div>
       </section>
 
       <StatCards />
       <RevenueChart />
+      <UserTable
+        title="Top Active Users"
+        subtitle="Most engaged team accounts this week"
+        limit={5}
+        showActions={false}
+      />
       <RecentOrders />
     </div>
   )
